@@ -10,22 +10,21 @@
   <body>
     <section>
       <form action="submit" class="js-search-form search-form">
-        <div>
-          <label for="search-image" class="label">Search images...</label>
+        <div class="form-group">     
         <input
           type="text"
+          placeholder="Search images..."
           name="search-image"
           class="search-input"
           autocomplete="off"
           required
         />
         <button class="search-button">Search</button>
-        </div>
-        
+        </div> 
       </form>
+      <span class="loader"></span>
+        <ul class="js-images-list"></ul>
     </section>
-    <!-- <script type="module" src="./js/pixabay-api.js"></script>
-    <script type="module" src="./js/render-functions.js"></script> -->
     <script type="module" src="./main.js"></script>
   </body>
 </html>
