@@ -7,27 +7,28 @@
     <title>Vanilla App Template</title>
     
     <script type="module" crossorigin src="/goit-js-hw-11/commonHelpers.js"></script>
-    <link rel="stylesheet" href="/goit-js-hw-11/assets/index-10c40100.css">
+    <link rel="modulepreload" crossorigin href="/goit-js-hw-11/assets/vendor-0fc460d7.js">
+    <link rel="stylesheet" href="/goit-js-hw-11/assets/vendor-4b066c51.css">
+    <link rel="stylesheet" href="/goit-js-hw-11/assets/index-917132dd.css">
   </head>
   <body>
     <section>
       <form action="submit" class="js-search-form search-form">
-        <div>
-          <label for="search-image" class="label">Search images...</label>
+        <div class="form-group">     
         <input
           type="text"
+          placeholder="Search images..."
           name="search-image"
           class="search-input"
           autocomplete="off"
           required
         />
         <button class="search-button">Search</button>
-        </div>
-        
+        </div> 
       </form>
+      <span class="loader"></span>
+        <ul class="js-images-list"></ul>
     </section>
-    <!-- <script type="module" src="./js/pixabay-api.js"></script>
-    <script type="module" src="./js/render-functions.js"></script> -->
     
   </body>
 </html>
