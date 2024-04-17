@@ -1,8 +1,8 @@
 import { createMarcup } from "./js/render-functions";
 import { searchImages } from "./js/pixabay-api";
 
-import SimpleLightbox from "simplelightbox";
-import "simplelightbox/dist/simple-lightbox.min.css";
+import SimpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
 import iziToast from "izitoast";
 import "izitoast/dist/css/iziToast.min.css";
 
@@ -14,15 +14,7 @@ const loaderEl = document.querySelector(".loader");
 loaderEl.style.borderColor = 'white';
 loaderEl.style.borderBottomColor = 'transparent';
 
-const lightbox = new SimpleLightbox('.js-images-list a', {
-    captions: true,
-    captionsData: 'alt',
-    captionDelay: 250,
-  });
-
-
 formEl.addEventListener('submit', handleSubmit);
-
 
 function handleSubmit(event) {
     event.preventDefault();
@@ -44,7 +36,13 @@ loaderEl.style.borderBottomColor = 'transparent';
         return data;
     })
       
-        .then (data => {imagesList.innerHTML = ('beforeend', createMarcup(data.hits))
+        .then (data => {imagesList.insertAdjacentHTML('beforeend', createMarcup(data.hits))
+
+        const lightbox = new SimpleLightbox('.images-list-item a', {
+          captions: true,
+          captionsData: 'alt',
+          captionDelay: 250,
+        });
 
         lightbox.refresh();
        searchInput = '';
