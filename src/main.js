@@ -27,8 +27,9 @@ function handleSubmit(event) {
 
        searchImages(searchInput)
        .then(data => {
-        loaderEl.style.borderColor = 'white';
-        loaderEl.style.borderBottomColor = 'transparent';
+        // loaderEl.style.borderColor = 'white';
+        // loaderEl.style.borderBottomColor = 'transparent';
+        loaderEl.classList.add('loader');
         
         if (!data.hits.length) {
             iziToast.error({title: 'Error', messege: 'Sorry, there are no images matching your search query. Please try again!',})
@@ -49,7 +50,8 @@ function handleSubmit(event) {
     })   
 
     .catch(error => {
-      loaderEl.style.display = 'none';
+      // loaderEl.style.display = 'none';
+     
       if(error.length != undefined) {
         iziToast.error({
             title: 'Error',
@@ -58,5 +60,10 @@ function handleSubmit(event) {
           });
       }
       
-    });
+    })
+    .finally(() =>{
+       loaderEl.classList.remove('loader')
+      // loaderEl.style.borderColor = 'white';
+      //   loaderEl.style.borderBottomColor = 'transparent';
+      })
 }
