@@ -1,8 +1,8 @@
 export function createMarcup(arr) {
 
-return arr.map(({id, webformatURL, largeimageURL, tags, likes, views, comments, downloads}) =>
+return arr.map(({id, webformatURL, largeImageURL, tags, likes, views, comments, downloads}) =>
     `<li class="images-list-item" data-id='${id}'>
-    <a class="images-list-link" href="${largeimageURL}">
+    <a class="images-list-link" href="${largeImageURL}">
         <img class="images-list-image" src="${webformatURL}" alt="${tags}"></img>
     </a>
     <div class="tumb">

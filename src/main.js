@@ -28,7 +28,7 @@ function handleSubmit(event) {
        searchImages(searchInput)
        .then(data => {
         loaderEl.style.borderColor = 'white';
-loaderEl.style.borderBottomColor = 'transparent';
+        loaderEl.style.borderBottomColor = 'transparent';
         
         if (!data.hits.length) {
             iziToast.error({title: 'Error', messege: 'Sorry, there are no images matching your search query. Please try again!',})
@@ -38,7 +38,7 @@ loaderEl.style.borderBottomColor = 'transparent';
       
         .then (data => {imagesList.insertAdjacentHTML('beforeend', createMarcup(data.hits))
 
-        const lightbox = new SimpleLightbox('.images-list-item a', {
+        const lightbox = new SimpleLightbox('.js-images-list a', {
           captions: true,
           captionsData: 'alt',
           captionDelay: 250,
@@ -46,9 +46,7 @@ loaderEl.style.borderBottomColor = 'transparent';
 
         lightbox.refresh();
        searchInput = '';
-    })
-      
-    
+    })   
 
     .catch(error => {
       loaderEl.style.display = 'none';
