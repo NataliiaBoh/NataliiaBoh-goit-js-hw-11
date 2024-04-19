@@ -25,7 +25,7 @@ loaderEl.style.display = 'none';
 
 formEl.addEventListener('submit', handleSubmit);
 
- async function handleSubmit(event) {
+ function handleSubmit(event) {
     event.preventDefault();
     
    
