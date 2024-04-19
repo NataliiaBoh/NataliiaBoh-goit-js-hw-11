@@ -11,6 +11,13 @@ const formEl = document.querySelector(".js-search-form");
 const imagesList = document.querySelector(".js-images-list");
 const loaderEl = document.querySelector(".loader");
 
+
+        const lightbox = new SimpleLightbox('.js-images-list a', {
+          captions: true,
+          captionsData: 'alt',
+          captionDelay: 250,
+        });
+
 loaderEl.style.borderColor = 'white';
 loaderEl.style.borderBottomColor = 'transparent';
 
@@ -38,12 +45,6 @@ function handleSubmit(event) {
     })
       
         .then (data => {imagesList.insertAdjacentHTML('beforeend', createMarcup(data.hits))
-
-        const lightbox = new SimpleLightbox('.js-images-list a', {
-          captions: true,
-          captionsData: 'alt',
-          captionDelay: 250,
-        });
 
         lightbox.refresh();
        searchInput = '';
